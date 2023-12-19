@@ -4,7 +4,7 @@
     margin: 0 auto;
 }
 
-// Get your education today
+// Get your education today - banner homepage
 .section-banner{
     position: relative;
     background-image: url(../../img/slider_background.jpg);
@@ -118,9 +118,8 @@
 
 // Popular Coursesright
 .section-popular{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    display: grid;
+    justify-items: center;
     margin-bottom: 116px;
 
     &::before{
@@ -135,10 +134,8 @@
     }
 
     .container-article{
-        display: flex;
-        flex-direction: column;
-        height: 1900px;
-        justify-content: space-between;
+        display: grid;
+        row-gap: 80px;
 
         // Main
     .container-article-main{
@@ -312,6 +309,7 @@
     justify-items: center;
     margin-top: 70px;
     margin-bottom: 70px;
+    z-index: 2;
 
     &::before{
         content: "";
@@ -333,11 +331,107 @@
 
 // What our students say
 .section-students{
-    margin-top: 60px;
-    margin-bottom: 60px;
+    padding-top: 60px;
+    padding-bottom: 60px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    background-image: url(../../img/testimonials_background_2.jpg);
+    background-size: cover;
+    background-position: center;
+    
+    .container-students-content{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: 700px;
+        justify-content: space-between;
+        
+        &::before{
+            content: "";
+            border: 2px solid #ffb606;
+            width: 15%;
+        }
+
+        h2{
+            color: #fff;
+            font-size: 38px;
+        }
+
+        .container-txt{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            p{
+                line-height: 30px;
+                text-align: center;
+                margin-bottom: 40px;
+                color: #fff;
+            }
+
+            &::before{
+                content: "''";
+                color: #ffb606;
+                font-size: 50px;
+                margin-top: 40px;
+                text-align: center;
+            }
+        }
+
+        .container-student-user{
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            
+            img{
+                border-radius: 50%;
+                width: 125px;
+                height: 125px;
+            }
+
+            h3{
+                color: #ffb606;
+                text-transform: uppercase;
+                margin:20px 0 0 0;
+            }
+            
+            p{
+                margin: 0;
+            }
+        }
+
+        .slide-circle{
+            width: 125px;
+            height: 50px;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+
+            div:first-child{
+                background-color: #ffb606;
+                width: 20px;
+                height: 20px;
+                border: none;
+            }
+            
+            div{
+                border: 1px solid #fff;
+                border-radius: 50%;
+                width: 12px;
+                height: 12px;
+            }
+
+        }
+    }
+}
+
+// Upcoming Events
+.section-events{
+    padding-top: 60px;
+    padding-bottom: 70px;
+    display: grid;
+    justify-items: center;
 
     &::before{
         content: "";
@@ -345,39 +439,107 @@
         width: 15%;
     }
 
-    .enable-background{
-        background-image: url('../../img/testimonials_background_2.jpg');
-        background-size: cover;
-        background-position: center;
-        background-attachment: fixed; /* Image de fond fixe pendant le défilement */
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        z-index: -2;
+    h2{
+        font-size: 38px;
+        margin: 20px 0 60px 0;
     }
 
-    .container-students-content{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+    .container-events-article{
+        display: grid;
+        row-gap: 80px;
 
-        .container-txt{
-            &::before{
-                content: "";
+        .date-events{
+            width: 160px;
+            height: 160px;
+            border: 4px solid #ffb606;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin: 40px 0;
+            font-weight: bold;
+
+            p{
+                font-size: 50px;
+                margin: 0;
+                color: #ffb606;
+            }
+
+            span{
+                color: #ffb606;
             }
         }
 
-        img{
-            border-radius: 50%;
-            width: 125px;
-            height: 125px;
+        .txt-events{
+           
+            .container-title{
+                font-weight: bold;
+                display: flex;
+                flex-direction: column;
+
+                a{
+                    margin: 0 0 10px 0;
+                    font-size: 22px;
+                    color: #000;
+
+                    &:hover{
+                        color: #ffb606                    
+                    }
+                }
+                span{
+                    font-size: 13px;
+                }
+            }
+
+            p{
+                line-height: 30px;
+                font-size: 14px;
+                color: #bbb1a9;
+            }
         }
-
     }
-    
-    
+
+}
 
 
-}   
+// PAGE-COURSES
+
+// Banner courses
+.section-banner-courses{
+    position: relative;
+    background-image: url(../../img/courses_background.jpg);
+    background-repeat: no-repeat; 
+    background-size: cover;
+    background-position: top;
+    height: 60vh;
+
+    .container-slide{
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%,-50%);
+        width: 100%;
+
+        .title-center{
+            h1{
+                background-color: #ffb606;
+                padding: 10px 40px;
+                color: #fff;
+                font-size: 70px;
+            }
+        }
+    }
+}
+
+// Popular Coursesright
+.section-popular-Courses{
+    margin-top: 115px;
+}
+
+// PAGE-CONTACT
+
+
+
